@@ -1,33 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import "./App.css"
+
+interface DotProps {
+  clientX: number
+  clientY: number
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [list, setList] = useState<DotProps[]>([])
+  const [undid, setUndid] = useState<DotProps[]>([])
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const newDot = {
+      clientX: event.clientX,
+      clientY: event.clientY,
+    }
+
+    setList((prev) => [...prev, newDot])
+  }
+
+  const handleUndo = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation()
+
+    if (list.length === 0) {
+      return
+    }
+
+    const lastItem = list[list.length - 1]
+    setUndid((prev) => [...prev, lastItem])
+
+    setList((prev) => {
+      const newArr = [...prev].slice(0, -1)
+      return newArr
+    })
+  }
+
+  const handleRedo = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation()
+
+    if (undid.length === 0) {
+      return
+    }
+
+    const recoveredDot = undid[undid.length - 1]
+    setUndid((prev) => {
+      const newArr = [...prev].slice(0, -1)
+      return newArr
+    })
+    setList((prev) => [...prev, recoveredDot])
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="page" onClick={handleClick}>
+        <button onClick={handleUndo}>Desfazer</button>
+        <button onClick={handleRedo}>Refazer</button>
+        {list.map((item) => (
+          <span
+            key={item.clientX}
+            className="dot"
+            style={{ left: item.clientX, top: item.clientY }}
+          />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
