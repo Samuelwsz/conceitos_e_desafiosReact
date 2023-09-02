@@ -16,13 +16,44 @@ import "./App.css"
 
 function App() {
   const [email, setEmail] = useState("")
-  const [senha, setSenha] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState<Error | null>(null)
+  const [isRequesting, setIsRequesting] = useState(false)
+
+  const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value)
+  }
+
+  const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value
+
+    setPassword(value)
+  }
+
+  const handleSubmit = () => {
+    let values = { email: email, password: password }
+
+    setError(null)
+    setIsRequesting(true)
+
+    login(values)
+      .then(() => {
+        alert("Login efetuado!")
+      })
+      .catch((error) => {
+        setError(error)
+      })
+      .finally(() => {
+        setIsRequesting(false)
+      })
+  }
+
   return (
     <div className="wrapper">
       <div className="login-form">
         <h1>Login Form 🐞</h1>
         {/* Coloque a mensagem de erro de login na div abaixo. Mostre a div somente se houver uma mensagem de erro. */}
-        <div className="errorMessage"></div>
+        {error && <div className="errorMessage">{error.message}</div>}
         <div className="row">
           <label htmlFor={"email"}>Email</label>
           <input
@@ -30,7 +61,7 @@ function App() {
             type={"email"}
             autoComplete="off"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleEmail}
           />
         </div>
         <div className="row">
@@ -38,13 +69,18 @@ function App() {
           <input
             id={"password"}
             type={"password"}
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
+            value={password}
+            onChange={handlePassword}
           />
         </div>
 
         <div className="button">
-          <button>Login</button>
+          <button
+            onClick={handleSubmit}
+            disabled={email === "" || password.length < 6 || isRequesting}
+          >
+            Login
+          </button>
         </div>
       </div>
     </div>
