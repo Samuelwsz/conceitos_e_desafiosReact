@@ -25,9 +25,7 @@ function App() {
   }
 
   const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
-
-    setPassword(value)
+    setPassword(event.target.value)
   }
 
   const handleSubmit = () => {
@@ -43,9 +41,9 @@ function App() {
       .catch((error) => {
         setError(error)
       })
-      .finally(() => {
-        setIsRequesting(false)
-      })
+      .finally(() => setIsRequesting(false))
+    setEmail("")
+    setPassword("")
   }
 
   return (
@@ -82,7 +80,6 @@ function App() {
             >
               Login
             </button>
-            <button>aaa</button>
           </div>
         </div>
       </div>
