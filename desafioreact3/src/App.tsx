@@ -31,33 +31,38 @@ function App() {
   }
 
   const calculateProgress = () => {
-    let value = 0
-    let amountToAdd = 25
+    const fields: (keyof FormData)[] = [
+      "fullName",
+      "email",
+      "maritalStatus",
+      "genre",
+    ]
+    const totalFields = fields.length
+    let completedFields = 0
 
-    if (data.fullName) {
-      const explodeString = data.fullName.split(" ")
-      if (explodeString[1]) {
-        value += amountToAdd
+    fields.forEach((field) => {
+      if (data[field]) {
+        if (field === "email") {
+          const pattern =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          if (pattern.test(data[field])) {
+            completedFields++
+          }
+        } else if (field === "fullName") {
+          const explodeString = data.fullName.split(" ")
+          if (explodeString[1]) {
+            completedFields++
+          }
+        } else {
+          completedFields++
+        }
       }
-    }
-    if (data.email) {
-      let pattern =
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      if (pattern.test(data.email)) {
-        value += amountToAdd
-      }
-    }
-    if (data.maritalStatus) {
-      value += amountToAdd
-    }
-    if (data.genre) {
-      value += amountToAdd
-    }
+    })
 
-    return value
+    // Calculate progress as a percentage
+    const progress = (completedFields / totalFields) * 100
+    return progress
   }
-
-  calculateProgress()
 
   const handleClick = () => {
     alert("Enviado!!!")
