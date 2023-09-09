@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-game {
+  width: 400px;
+  height: 400px;
+  background: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.board-game span {
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 30px;
+
+  position: relative;
+  outline: 1px solid #ccc;
+}
+
+.board-game span:hover {
+  background: #f6f6f6;
+  cursor: pointer;
+}
+
+abbr {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
