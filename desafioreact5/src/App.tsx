@@ -21,12 +21,24 @@ import "./App.css"
 import axios from "axios"
 
 function App() {
-  const [list, setList] = useState<{ name: string; url: string }[]>([])
+  const [list, setList] = useState<
+    {
+      name: string
+      url: string
+      base_experience: number
+      sprites: { front_default: string }
+    }[]
+  >([])
 
   useEffect(() => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon/")
-      .then((response) => setList(response.data.results))
+    axios.get("https://pokeapi.co/api/v2/pokemon/").then((response) => {
+      const sortedArray = [...response.data.results]
+
+      sortedArray.sort((a, b) => {
+        return a.name.localeCompare(b.name)
+      })
+      setList(sortedArray)
+    })
   }, [])
 
   return (
@@ -42,16 +54,19 @@ function App() {
 }
 
 interface PokemonProps {
-  data: { name: string; url: string }
+  data: {
+    name: string
+    url: string
+    base_experience: number
+    sprites: { front_default: string }
+  }
 }
 
 const Pokemon = ({ data }: PokemonProps) => {
-  const [details, setDetails] = useState(null)
+  const [details, setDetails] = useState<PokemonProps["data"] | null>(null)
 
   useEffect(() => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon/")
-      .then((response) => console.log(response))
+    axios.get(data.url).then((response) => setDetails(response.data))
   }, [])
 
   if (details === null) {
@@ -60,8 +75,25 @@ const Pokemon = ({ data }: PokemonProps) => {
 
   return (
     <ul>
-      <li>{data.name}</li>
-      <li>{data.url}</li>
+      <li
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={details.sprites.front_default}
+          style={{
+            width: 30,
+            marginLeft: 10,
+          }}
+          alt={details.sprites.front_default}
+        />
+        <span>
+          <b>{details.name}</b> - EXP {details.base_experience}
+        </span>
+      </li>
     </ul>
   )
 }
