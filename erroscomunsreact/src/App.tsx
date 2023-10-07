@@ -3,13 +3,9 @@ import "./App.css"
 
 function App() {
   //primeiro erro
-  const [count, setCount] = useState(0)
+
   const [countPrev, setCountPrev] = useState(0)
-  const increaseCount = () => {
-    setCount(count + 1) //0 + 1
-    setCount(count + 1) //0 + 1
-    setCount(count + 1) //0 + 1
-  }
+
   const increaseCountPrev = () => {
     setCountPrev((prev) => prev + 1)
     setCountPrev((prev) => prev + 1)
@@ -44,7 +40,10 @@ function App() {
     <>
       <h2>Primeiro erro</h2>
       <h2>Contando apenas um número</h2>
-      <button onClick={increaseCount}>{count}</button>
+      {/*   <button onClick={increaseCount}>{count}</button>
+      <button onClick={increaseCount}>{count}</button>*/}
+      <Button />
+      <Button />
       <h2>Contando varios números</h2>
       <button onClick={increaseCountPrev}>{countPrev}</button>
       <hr />
@@ -62,6 +61,18 @@ function App() {
       <p>Total: {orderPrice}</p>
     </>
   )
+}
+
+const Button = () => {
+  const [count, setCount] = useState(0)
+  const increaseCount = () => {
+    //o state não é atualizado de forma imediata, ele faz um agendamento da proxima atualização(aquedule)
+    setCount(count + 1) //0 + 1
+    setCount(count + 1) //0 + 1
+    setCount(count + 1) //0 + 1
+  }
+
+  return <button onClick={increaseCount}>{count}</button>
 }
 
 export default App
