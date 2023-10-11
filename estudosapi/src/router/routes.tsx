@@ -10,7 +10,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/useeffect",
-    element: <UseEffectEstudo />,
+    element: <UseEffectEstudo nome="charmander" />,
   },
   {
     path: "/usestate",
