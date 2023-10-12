@@ -4,6 +4,8 @@ import UseEffectEstudo from "../pages/useeffect"
 import UsestateEstudo from "../pages/usestate"
 import TreinadorPokemon from "../pages/usecontext"
 import { PokemonProvider } from "../context/PokemonContext"
+import CustomHooks from "../pages/customhook"
+import HookTipoDinamico from "../pages/hookstiposdinamicos"
 
 export const router = createBrowserRouter([
   {
@@ -25,5 +27,13 @@ export const router = createBrowserRouter([
         <TreinadorPokemon />
       </PokemonProvider>
     ),
+  },
+  {
+    path: "/customhooks",
+    element: <CustomHooks />,
+  },
+  {
+    path: "/hookdinamico",
+    element: <HookTipoDinamico />,
   },
 ])
