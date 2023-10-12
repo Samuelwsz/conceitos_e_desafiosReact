@@ -11,6 +11,7 @@ import {
 interface PokemonContextType {
   treinador: string
   setTreinador: Dispatch<SetStateAction<string>>
+  TrocarTreinador: () => void
 }
 
 // Criar o contexto
@@ -21,11 +22,24 @@ interface PokemonProviderProps {
   children: ReactNode
 }
 
+const Treinadores = ["Ash Ketchum", "Red", "Misty", "Brock", "May"]
+
+function getTreinadorAleatorio() {
+  const index = Math.floor(Math.random() * Treinadores.length)
+  return Treinadores[index]
+}
+
 export function PokemonProvider({ children }: PokemonProviderProps) {
   const [treinador, setTreinador] = useState("Ash Ketchum")
 
+  function TrocarTreinador() {
+    const novoTreinador = getTreinadorAleatorio()
+    setTreinador(novoTreinador)
+  }
   return (
-    <PokemonContext.Provider value={{ treinador, setTreinador }}>
+    <PokemonContext.Provider
+      value={{ treinador, setTreinador, TrocarTreinador }}
+    >
       {children}
     </PokemonContext.Provider>
   )

@@ -17,6 +17,12 @@ function App() {
         >
           state
         </Link>
+        <Link
+          to="/usecontext"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl"
+        >
+          context
+        </Link>
       </div>
     </div>
   )

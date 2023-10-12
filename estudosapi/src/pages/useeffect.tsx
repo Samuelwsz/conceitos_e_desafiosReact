@@ -54,14 +54,14 @@ export default function UseEffectEstudo() {
   }
   return (
     <>
-      <Link to="/" className="bg-black text-white flex justify-center">
+      <Link to="/" className="bg-black flex justify-center">
         início
       </Link>
       <div className="bg-black h-screen flex justify-center items-center">
         <div className="text-center">
           <div>
             <input
-              className="mb-5 outline-none p-1 border border-yellow-300 bg-black"
+              className="mb-5 outline-none p-1 border border-yellow-300 bg-black" 
               type="text"
               placeholder="Nome do Pokémon"
               value={nome}
@@ -69,7 +69,7 @@ export default function UseEffectEstudo() {
             />
             <button
               onClick={Limpar}
-              className="text-white ml-3 p-1 border border-yellow-300"
+              className="ml-3 p-1 border border-yellow-300"
             >
               Limpar
             </button>

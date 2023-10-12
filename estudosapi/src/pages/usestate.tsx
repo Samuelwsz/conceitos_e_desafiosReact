@@ -18,12 +18,12 @@ function UsestateEstudo() {
 
   return (
     <>
-      <Link to="/" className="bg-black text-white flex justify-center">
+      <Link to="/" className="bg-black flex justify-center">
         inicio
       </Link>
       <div className="bg-black h-screen flex justify-center items-center">
         <div className="text-center">
-          <h1 className="text-white p-3 border rounded-md border-yellow-300 text-3xl">
+          <h1 className="p-3 border rounded-md border-yellow-300 text-3xl">
             {Pokemon}
           </h1>
           <button
