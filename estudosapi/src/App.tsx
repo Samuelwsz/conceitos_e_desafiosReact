@@ -35,6 +35,12 @@ function App() {
         >
           hook dinâmico
         </Link>
+        <Link
+          to="/listacompras"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Lista de compras
+        </Link>
       </div>
     </div>
   )

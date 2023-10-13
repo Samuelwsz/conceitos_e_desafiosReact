@@ -6,6 +6,7 @@ import TreinadorPokemon from "../pages/usecontext"
 import { PokemonProvider } from "../context/PokemonContext"
 import CustomHooks from "../pages/customhook"
 import HookTipoDinamico from "../pages/hookstiposdinamicos"
+import ListaCompras from "../pages/listacompras"
 
 export const router = createBrowserRouter([
   {
@@ -35,5 +36,9 @@ export const router = createBrowserRouter([
   {
     path: "/hookdinamico",
     element: <HookTipoDinamico />,
+  },
+  {
+    path: "/listacompras",
+    element: <ListaCompras />,
   },
 ])
