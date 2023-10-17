@@ -35,7 +35,11 @@ function ProductCategoryRow({ category }: { category: string }) {
 }
 
 function ProductRow({ product }: { product: Product }) {
-  const name = product.stocked ? product.name : <span>{product.name}</span>
+  const name = product.stocked ? (
+    product.name
+  ) : (
+    <span className="text-red-500">{product.name}</span>
+  )
 
   return (
     <>
@@ -107,7 +111,7 @@ function SearchBar({
           placeholder="Search..."
           value={filterText}
           onChange={(e) => onFilterTextChange?.(e.target.value)}
-          className="p-1"
+          className="p-1 text-black"
         />
         <div className="pt-3">
           <label className="items-center inline-flex gap-1">
