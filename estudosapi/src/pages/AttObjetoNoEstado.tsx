@@ -9,11 +9,6 @@ interface Player {
   score: number
 }
 
-interface Position {
-  x: number
-  y: number
-}
-
 const initialPosition = {
   x: 0,
   y: 0,
@@ -26,7 +21,7 @@ export default function AttObjetoNoEstado() {
     score: 10,
   })
 
-  const [shape, setShape] = useState<{ color: string; position: Position }>({
+  const [shape, setShape] = useState({
     color: "orange",
     position: initialPosition,
   })

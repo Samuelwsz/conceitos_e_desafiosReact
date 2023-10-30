@@ -9,6 +9,9 @@ import HookTipoDinamico from "../pages/hookstiposdinamicos"
 import ListaCompras from "../pages/listacompras"
 import ContadorSolicitacoes from "../pages/contadorSolicitacoes"
 import AttObjetoNoEstado from "../pages/AttObjetoNoEstado"
+import AddProductJson from "../pages/jsonadd"
+import AttMatrizesDeEstado from "../pages/attMatrizesEstado"
+import AttMutations from "../pages/attMutacoesEstado"
 
 export const router = createBrowserRouter([
   {
@@ -51,4 +54,16 @@ export const router = createBrowserRouter([
     path: "/attobjeto",
     element: <AttObjetoNoEstado />,
   },
+  {
+    path: "/attmatrizesestado",
+    element: <AttMatrizesDeEstado />,
+  },
+  {
+    path: "/attmutations",
+    element: <AttMutations />,
+  },
+  /*{
+    path: "/addjson",
+    element: <AddProductJson />,
+  },*/
 ])

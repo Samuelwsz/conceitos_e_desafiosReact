@@ -53,6 +53,18 @@ function App() {
         >
           Atualizar estado objeto
         </Link>
+        <Link
+          to="/attmatrizesestado"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Atualizar matrizes de estado
+        </Link>
+        <Link
+          to="/addjson"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Adicionar Produto Json
+        </Link>
       </div>
     </div>
   )
