@@ -7,6 +7,8 @@ import { PokemonProvider } from "../context/PokemonContext"
 import CustomHooks from "../pages/customhook"
 import HookTipoDinamico from "../pages/hookstiposdinamicos"
 import ListaCompras from "../pages/listacompras"
+import ContadorSolicitacoes from "../pages/contadorSolicitacoes"
+import AttObjetoNoEstado from "../pages/AttObjetoNoEstado"
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +42,13 @@ export const router = createBrowserRouter([
   {
     path: "/listacompras",
     element: <ListaCompras />,
+  },
+  {
+    path: "/listasolicitacoes",
+    element: <ContadorSolicitacoes />,
+  },
+  {
+    path: "/attobjeto",
+    element: <AttObjetoNoEstado />,
   },
 ])

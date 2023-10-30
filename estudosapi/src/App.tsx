@@ -41,6 +41,18 @@ function App() {
         >
           Lista de compras
         </Link>
+        <Link
+          to="/listasolicitacoes"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Lista de solicitações
+        </Link>
+        <Link
+          to="/attobjeto"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Atualizar estado objeto
+        </Link>
       </div>
     </div>
   )
