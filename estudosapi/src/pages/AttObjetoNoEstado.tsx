@@ -21,6 +21,8 @@ export default function AttObjetoNoEstado() {
     score: 10,
   })
 
+  const fullName = player.firstName + " " + player.lastName
+
   const [shape, setShape] = useState({
     color: "orange",
     position: initialPosition,
@@ -91,7 +93,7 @@ export default function AttObjetoNoEstado() {
           value={player.lastName}
           onChange={handleChangeLastName}
         />
-        {player.firstName} {player.lastName}
+        {fullName}
         <div className="text-black">
           <select value={shape.color} onChange={handleColorChange}>
             <option value="orange" className="text-black">

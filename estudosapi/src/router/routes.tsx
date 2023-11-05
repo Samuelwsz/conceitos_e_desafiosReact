@@ -12,6 +12,8 @@ import AttObjetoNoEstado from "../pages/AttObjetoNoEstado"
 import AddProductJson from "../pages/jsonadd"
 import AttMatrizesDeEstado from "../pages/attMatrizesEstado"
 import AttMutations from "../pages/attMutacoesEstado"
+import GerenciandoEstado from "../pages/gerenciandoEstado"
+import CompartilharEstados from "../pages/compartilharEstados"
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +63,14 @@ export const router = createBrowserRouter([
   {
     path: "/attmutations",
     element: <AttMutations />,
+  },
+  {
+    path: "/gerenciandoestado",
+    element: <GerenciandoEstado />,
+  },
+  {
+    path: "/compartilharestados",
+    element: <CompartilharEstados />,
   },
   /*{
     path: "/addjson",
