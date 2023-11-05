@@ -1,39 +1,30 @@
-import React, { useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import { Link } from "react-router-dom"
-
-interface ErrorType extends Error {
-  message: string
-}
 
 export default function GerenciandoEstado() {
   const [answer, setAnswer] = useState("")
-  const [error, setError] = useState<ErrorType | null>(null)
+  const [error, setError] = useState<Error | null>(null)
   const [status, setStatus] = useState<"typing" | "submitting" | "success">(
     "typing"
   )
+  /*
+  if (status === "success") {
+    return <h1 className="text-black">That`s right</h1>
+  }*/
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     setStatus("submitting")
     try {
       await submitForm(answer)
       setStatus("success")
-    } catch (err: unknown) {
-      if (err instanceof Error) {
-        setStatus("typing")
-        setError(err)
-      } else {
-        // Trate outros tipos de erro aqui, se necessário.
-        return
-      }
+    } catch (err) {
+      setStatus("typing")
+      setError(err as Error)
     }
   }
 
-  if (status === "success") {
-    return <h1>That's right!</h1>
-  }
-
-  function handleTextareaChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+  function handleTextareaChange(e: ChangeEvent<HTMLTextAreaElement>) {
     setAnswer(e.target.value)
   }
 
@@ -53,7 +44,7 @@ export default function GerenciandoEstado() {
 
   return (
     <>
-      <div className="flex justify-center bg-black gap-5">
+      <div className="flex justify-center bg-black flex-col">
         <Link to="/" className="bg-black flex justify-center">
           início
         </Link>
@@ -63,8 +54,14 @@ export default function GerenciandoEstado() {
         >
           Compartilhar estado entre componentes
         </Link>
+        <Link
+          to="/adicionarremovercss"
+          className="bg-black flex justify-center"
+        >
+          Adicionar e remover classe CSS
+        </Link>
       </div>
-      <div className="bg-black h-screen flex justify-center items-center flex-col">
+      <div className="bg-black h-screen flex justify-center items-center flex-col mt-[-72px]">
         <h2>City quiz</h2>
         <p className="mb-1">
           In which city is there a billboard that turns air into drinkable
@@ -75,7 +72,7 @@ export default function GerenciandoEstado() {
             value={answer}
             onChange={handleTextareaChange}
             disabled={status === "submitting"}
-            className="text-black"
+            className="text-black m-auto"
           />
           <br />
           <button
@@ -84,7 +81,11 @@ export default function GerenciandoEstado() {
           >
             Submit
           </button>
-          {error !== null && <p className="text-black">{error.message}</p>}
+          {error !== null && <p>{error.message}</p>}
+          {status !== null && <p className="text-center">Status: {status}</p>}
+          <p className="text-center">
+            {status === "success" ? "That`s right" : ""}
+          </p>
         </form>
       </div>
     </>

@@ -14,6 +14,7 @@ import AttMatrizesDeEstado from "../pages/attMatrizesEstado"
 import AttMutations from "../pages/attMutacoesEstado"
 import GerenciandoEstado from "../pages/gerenciandoEstado"
 import CompartilharEstados from "../pages/compartilharEstados"
+import AdicionarRemoverClasseCSS from "../pages/adicionarRemoverClasseCSS"
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ export const router = createBrowserRouter([
   {
     path: "/compartilharestados",
     element: <CompartilharEstados />,
+  },
+  {
+    path: "/adicionarremovercss",
+    element: <AdicionarRemoverClasseCSS />,
   },
   /*{
     path: "/addjson",
