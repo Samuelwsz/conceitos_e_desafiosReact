@@ -1,7 +1,7 @@
 //https://react.dev/learn/managing-state#sharing-state-between-components
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import Panel from "../components/Panel"
+import Panel from "../../components/Panel"
 
 export default function CompartilharEstados() {
   const [activeIndex, setActiveIndex] = useState(0)

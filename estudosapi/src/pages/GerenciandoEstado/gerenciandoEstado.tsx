@@ -7,10 +7,6 @@ export default function GerenciandoEstado() {
   const [status, setStatus] = useState<"typing" | "submitting" | "success">(
     "typing"
   )
-  /*
-  if (status === "success") {
-    return <h1 className="text-black">That`s right</h1>
-  }*/
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -59,6 +55,12 @@ export default function GerenciandoEstado() {
           className="bg-black flex justify-center"
         >
           Adicionar e remover classe CSS
+        </Link>
+        <Link
+          to="/relogiocssestilizado"
+          className="bg-black flex justify-center"
+        >
+          Relogio com cores
         </Link>
       </div>
       <div className="bg-black h-screen flex justify-center items-center flex-col mt-[-72px]">

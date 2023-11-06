@@ -12,9 +12,10 @@ import AttObjetoNoEstado from "../pages/AttObjetoNoEstado"
 import AddProductJson from "../pages/jsonadd"
 import AttMatrizesDeEstado from "../pages/attMatrizesEstado"
 import AttMutations from "../pages/attMutacoesEstado"
-import GerenciandoEstado from "../pages/gerenciandoEstado"
-import CompartilharEstados from "../pages/compartilharEstados"
-import AdicionarRemoverClasseCSS from "../pages/adicionarRemoverClasseCSS"
+import GerenciandoEstado from "../pages/GerenciandoEstado/gerenciandoEstado"
+import CompartilharEstados from "../pages/GerenciandoEstado/compartilharEstados"
+import AdicionarRemoverClasseCSS from "../pages/GerenciandoEstado/adicionarRemoverClasseCSS"
+import RelogioComCores from "../pages/GerenciandoEstado/relogioCSSestilizado"
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
   {
     path: "/adicionarremovercss",
     element: <AdicionarRemoverClasseCSS />,
+  },
+  {
+    path: "/relogiocssestilizado",
+    element: <RelogioComCores />,
   },
   /*{
     path: "/addjson",
