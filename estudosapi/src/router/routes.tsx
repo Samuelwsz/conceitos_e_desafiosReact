@@ -18,6 +18,7 @@ import AdicionarRemoverClasseCSS from "../pages/GerenciandoEstado/adicionarRemov
 import RelogioComCores from "../pages/GerenciandoEstado/relogioCSSestilizado"
 import ConsertarListaQuebrada from "../pages/GerenciandoEstado/consertarListaQuebrada"
 import InputDePesquisa from "../pages/GerenciandoEstado/inputPesquisa"
+import InputComErroDeTexto from "../pages/GerenciandoEstado/corrigirInputComErroDeTexto"
 
 export const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
   {
     path: "/inputpesquisa",
     element: <InputDePesquisa />,
+  },
+  {
+    path: "/inputcomerrodetexto",
+    element: <InputComErroDeTexto />,
   },
   /*{
     path: "/addjson",

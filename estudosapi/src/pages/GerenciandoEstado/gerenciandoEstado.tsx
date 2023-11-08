@@ -71,6 +71,12 @@ export default function GerenciandoEstado() {
         <Link to="/inputpesquisa" className="bg-black flex justify-center">
           Input de pesquisa
         </Link>
+        <Link
+          to="/inputcomerrodetexto"
+          className="bg-black flex justify-center"
+        >
+          Input com erro na caixa de texto
+        </Link>
       </div>
       <div className="bg-black h-screen flex justify-center items-center flex-col mt-[-72px]">
         <h2>City quiz</h2>
