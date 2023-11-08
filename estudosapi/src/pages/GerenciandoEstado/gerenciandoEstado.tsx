@@ -62,6 +62,15 @@ export default function GerenciandoEstado() {
         >
           Relogio com cores
         </Link>
+        <Link
+          to="/consertarlistaquebrada"
+          className="bg-black flex justify-center"
+        >
+          Consertar lista quebrada
+        </Link>
+        <Link to="/inputpesquisa" className="bg-black flex justify-center">
+          Input de pesquisa
+        </Link>
       </div>
       <div className="bg-black h-screen flex justify-center items-center flex-col mt-[-72px]">
         <h2>City quiz</h2>

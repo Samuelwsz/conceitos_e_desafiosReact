@@ -16,6 +16,8 @@ import GerenciandoEstado from "../pages/GerenciandoEstado/gerenciandoEstado"
 import CompartilharEstados from "../pages/GerenciandoEstado/compartilharEstados"
 import AdicionarRemoverClasseCSS from "../pages/GerenciandoEstado/adicionarRemoverClasseCSS"
 import RelogioComCores from "../pages/GerenciandoEstado/relogioCSSestilizado"
+import ConsertarListaQuebrada from "../pages/GerenciandoEstado/consertarListaQuebrada"
+import InputDePesquisa from "../pages/GerenciandoEstado/inputPesquisa"
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +83,14 @@ export const router = createBrowserRouter([
   {
     path: "/relogiocssestilizado",
     element: <RelogioComCores />,
+  },
+  {
+    path: "/consertarlistaquebrada",
+    element: <ConsertarListaQuebrada />,
+  },
+  {
+    path: "/inputpesquisa",
+    element: <InputDePesquisa />,
   },
   /*{
     path: "/addjson",
