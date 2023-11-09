@@ -77,6 +77,12 @@ export default function GerenciandoEstado() {
         >
           Input com erro na caixa de texto
         </Link>
+        <Link
+          to="/redefinirformulario"
+          className="bg-black flex justify-center"
+        >
+          Redefinir formulário
+        </Link>
       </div>
       <div className="bg-black h-screen flex justify-center items-center flex-col mt-[-72px]">
         <h2>City quiz</h2>

@@ -19,6 +19,7 @@ import RelogioComCores from "../pages/GerenciandoEstado/relogioCSSestilizado"
 import ConsertarListaQuebrada from "../pages/GerenciandoEstado/consertarListaQuebrada"
 import InputDePesquisa from "../pages/GerenciandoEstado/inputPesquisa"
 import InputComErroDeTexto from "../pages/GerenciandoEstado/corrigirInputComErroDeTexto"
+import RedefinirFormulario from "../pages/GerenciandoEstado/redefinirFormulario"
 
 export const router = createBrowserRouter([
   {
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
   {
     path: "/inputcomerrodetexto",
     element: <InputComErroDeTexto />,
+  },
+  {
+    path: "/redefinirformulario",
+    element: <RedefinirFormulario />,
   },
   /*{
     path: "/addjson",
