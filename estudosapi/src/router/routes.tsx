@@ -20,6 +20,7 @@ import ConsertarListaQuebrada from "../pages/GerenciandoEstado/consertarListaQue
 import InputDePesquisa from "../pages/GerenciandoEstado/inputPesquisa"
 import InputComErroDeTexto from "../pages/GerenciandoEstado/corrigirInputComErroDeTexto"
 import RedefinirFormulario from "../pages/GerenciandoEstado/redefinirFormulario"
+import ApiCoquetel from "../pages/APIcoquetel/apicoquetel"
 
 export const router = createBrowserRouter([
   {
@@ -101,6 +102,10 @@ export const router = createBrowserRouter([
   {
     path: "/redefinirformulario",
     element: <RedefinirFormulario />,
+  },
+  {
+    path: "/apicoquetel",
+    element: <ApiCoquetel />,
   },
   /*{
     path: "/addjson",

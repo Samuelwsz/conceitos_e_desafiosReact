@@ -65,6 +65,13 @@ function App() {
         >
           Gerenciando o estado
         </Link>
+        <Link
+          to="/apicoquetel"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          API Coquetel
+        </Link>
+
         {/*   
          <Link
           to="/addjson"
