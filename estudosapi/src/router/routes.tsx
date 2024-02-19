@@ -9,7 +9,6 @@ import HookTipoDinamico from "../pages/hookstiposdinamicos"
 import ListaCompras from "../pages/listacompras"
 import ContadorSolicitacoes from "../pages/contadorSolicitacoes"
 import AttObjetoNoEstado from "../pages/AttObjetoNoEstado"
-import AddProductJson from "../pages/jsonadd"
 import AttMatrizesDeEstado from "../pages/attMatrizesEstado"
 import AttMutations from "../pages/attMutacoesEstado"
 import GerenciandoEstado from "../pages/GerenciandoEstado/gerenciandoEstado"
@@ -21,6 +20,8 @@ import InputDePesquisa from "../pages/GerenciandoEstado/inputPesquisa"
 import InputComErroDeTexto from "../pages/GerenciandoEstado/corrigirInputComErroDeTexto"
 import RedefinirFormulario from "../pages/GerenciandoEstado/redefinirFormulario"
 import ApiCoquetel from "../pages/APIcoquetel/apicoquetel"
+import { Accordion } from "../FreeCodeCampTutorialProjects/Accordion/Accordion"
+
 
 export const router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ export const router = createBrowserRouter([
   {
     path: "/apicoquetel",
     element: <ApiCoquetel />,
+  },
+  {
+    path: "/FreeCodeCampTutorialProjects",
+    element: <Accordion />,
   },
   /*{
     path: "/addjson",

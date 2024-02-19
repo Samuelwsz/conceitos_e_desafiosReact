@@ -3,7 +3,7 @@ import "./global.css"
 
 function App() {
   return (
-    <div className="bg-black h-screen flex justify-center items-center">
+    <div className="bg-black flex justify-center items-center py-5">
       <div className="text-center">
         <Link
           to="/useeffect"
@@ -71,7 +71,12 @@ function App() {
         >
           API Coquetel
         </Link>
-
+        <Link
+          to="/FreeCodeCampTutorialProjects"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Accordion
+        </Link>
         {/*   
          <Link
           to="/addjson"
