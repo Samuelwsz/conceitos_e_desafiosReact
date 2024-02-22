@@ -21,7 +21,7 @@ import InputComErroDeTexto from "../pages/GerenciandoEstado/corrigirInputComErro
 import RedefinirFormulario from "../pages/GerenciandoEstado/redefinirFormulario"
 import ApiCoquetel from "../pages/APIcoquetel/apicoquetel"
 import { Accordion } from "../FreeCodeCampTutorialProjects/Accordion/Accordion"
-
+import { RandomColorGenerator } from "../FreeCodeCampTutorialProjects/RandomColorGenerator/RandomColorGenerator"
 
 export const router = createBrowserRouter([
   {
@@ -109,8 +109,12 @@ export const router = createBrowserRouter([
     element: <ApiCoquetel />,
   },
   {
-    path: "/FreeCodeCampTutorialProjects",
+    path: "/Accordion",
     element: <Accordion />,
+  },
+  {
+    path: "/RandomColorGenerator",
+    element: <RandomColorGenerator />,
   },
   /*{
     path: "/addjson",

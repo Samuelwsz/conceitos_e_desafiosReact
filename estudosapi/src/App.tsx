@@ -72,10 +72,16 @@ function App() {
           API Coquetel
         </Link>
         <Link
-          to="/FreeCodeCampTutorialProjects"
+          to="/Accordion"
           className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
         >
           Accordion
+        </Link>
+        <Link
+          to="/RandomColorGenerator"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          RandomColorGenerator
         </Link>
         {/*   
          <Link
