@@ -83,6 +83,19 @@ function App() {
         >
           RandomColorGenerator
         </Link>
+        <Link
+          to="/StarRating"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          StarRating
+        </Link>
+        <Link
+          to="/ImageSlider"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          ImageSlider
+        </Link>
+
         {/*   
          <Link
           to="/addjson"

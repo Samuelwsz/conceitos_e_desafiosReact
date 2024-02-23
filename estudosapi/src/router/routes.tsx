@@ -22,6 +22,8 @@ import RedefinirFormulario from "../pages/GerenciandoEstado/redefinirFormulario"
 import ApiCoquetel from "../pages/APIcoquetel/apicoquetel"
 import { Accordion } from "../FreeCodeCampTutorialProjects/Accordion/Accordion"
 import { RandomColorGenerator } from "../FreeCodeCampTutorialProjects/RandomColorGenerator/RandomColorGenerator"
+import StarRating from "../FreeCodeCampTutorialProjects/StarRating/StarRating"
+import { ImageSlider } from "../FreeCodeCampTutorialProjects/ImageSlider/ImageSlider"
 
 export const router = createBrowserRouter([
   {
@@ -116,6 +118,15 @@ export const router = createBrowserRouter([
     path: "/RandomColorGenerator",
     element: <RandomColorGenerator />,
   },
+  {
+    path: "/StarRating",
+    element: <StarRating />,
+  },
+  {
+    path: "/ImageSlider",
+    element: <ImageSlider />,
+  },
+
   /*{
     path: "/addjson",
     element: <AddProductJson />,
