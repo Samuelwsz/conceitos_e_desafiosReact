@@ -95,6 +95,18 @@ function App() {
         >
           ImageSlider
         </Link>
+        <Link
+          to="/load-more-data"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          load more data
+        </Link>
+        <Link
+          to="/qr-code-generator"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          qr code generator
+        </Link>
 
         {/*   
          <Link

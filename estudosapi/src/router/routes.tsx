@@ -24,6 +24,8 @@ import { Accordion } from "../FreeCodeCampTutorialProjects/Accordion/Accordion"
 import { RandomColorGenerator } from "../FreeCodeCampTutorialProjects/RandomColorGenerator/RandomColorGenerator"
 import StarRating from "../FreeCodeCampTutorialProjects/StarRating/StarRating"
 import { ImageSlider } from "../FreeCodeCampTutorialProjects/ImageSlider/ImageSlider"
+import { LoadMoreData } from "../FreeCodeCampTutorialProjects/load-more-data/LoadMoreData"
+import { QrCodeGenerator } from "../FreeCodeCampTutorialProjects/qr-code-generator/QrCodeGenerator"
 
 export const router = createBrowserRouter([
   {
@@ -124,7 +126,21 @@ export const router = createBrowserRouter([
   },
   {
     path: "/ImageSlider",
-    element: <ImageSlider />,
+    element: (
+      <ImageSlider
+        url={"https://picsum.photos/v2/list"}
+        limit={"10"}
+        page={"1"}
+      />
+    ),
+  },
+  {
+    path: "/load-more-data",
+    element: <LoadMoreData />,
+  },
+  {
+    path: "/qr-code-generator",
+    element: <QrCodeGenerator />,
   },
 
   /*{
