@@ -26,6 +26,8 @@ import StarRating from "../FreeCodeCampTutorialProjects/StarRating/StarRating"
 import { ImageSlider } from "../FreeCodeCampTutorialProjects/ImageSlider/ImageSlider"
 import { LoadMoreData } from "../FreeCodeCampTutorialProjects/load-more-data/LoadMoreData"
 import { QrCodeGenerator } from "../FreeCodeCampTutorialProjects/qr-code-generator/QrCodeGenerator"
+import { TabTest } from "../FreeCodeCampTutorialProjects/custom-tabs/tab-test"
+import { SearchAutocomplete } from "../FreeCodeCampTutorialProjects/SearchAutocomplete/SearchAutocomplete"
 
 export const router = createBrowserRouter([
   {
@@ -142,7 +144,14 @@ export const router = createBrowserRouter([
     path: "/qr-code-generator",
     element: <QrCodeGenerator />,
   },
-
+  {
+    path: "/custom-tabs",
+    element: <TabTest />,
+  },
+  {
+    path: "/SearchAutocomplete",
+    element: <SearchAutocomplete />,
+  },
   /*{
     path: "/addjson",
     element: <AddProductJson />,

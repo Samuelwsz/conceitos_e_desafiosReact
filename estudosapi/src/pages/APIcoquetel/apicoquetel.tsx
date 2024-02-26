@@ -6,16 +6,7 @@ interface Drink {
   idDrink: string
   strDrink: string
   strDrinkThumb: string
-  strIngredient1?: string | null
-  strIngredient2?: string | null
-  strIngredient3?: string | null
-  strIngredient4?: string | null
-  strIngredient5?: string | null
-  strIngredient6?: string | null
-  strIngredient7?: string | null
-  strIngredient8?: string | null
-  strIngredient9?: string | null
-  strIngredient10?: string | null
+  [key: string]: string | undefined
 }
 
 export default function ApiCoquetel() {
@@ -68,16 +59,16 @@ export default function ApiCoquetel() {
                 Ingredients
               </h2>
               <div>
-                <p className="text-black">{c.strIngredient1}</p>
-                <p className="text-black">{c.strIngredient2}</p>
-                <p className="text-black">{c.strIngredient3}</p>
-                <p className="text-black">{c.strIngredient4}</p>
-                <p className="text-black">{c.strIngredient5}</p>
-                <p className="text-black">{c.strIngredient6}</p>
-                <p className="text-black">{c.strIngredient7}</p>
-                <p className="text-black">{c.strIngredient8}</p>
-                <p className="text-black">{c.strIngredient9}</p>
-                <p className="text-black">{c.strIngredient10}</p>
+                {Object.keys(c).map((key) => {
+                  if (key.startsWith("strIngredient") && c[key]) {
+                    return (
+                      <p key={key} className="text-black">
+                        {c[key]}
+                      </p>
+                    )
+                  }
+                  return null
+                })}
               </div>
               <button
                 onClick={fecthCocktailGandler}

@@ -107,6 +107,18 @@ function App() {
         >
           qr code generator
         </Link>
+        <Link
+          to="/custom-tabs"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          custom tabs
+        </Link>
+        <Link
+          to="/SearchAutocomplete"
+          className="text-white p-3 border rounded-md border-yellow-300 text-3xl block mt-3"
+        >
+          Search Autocomplete
+        </Link>
 
         {/*   
          <Link
